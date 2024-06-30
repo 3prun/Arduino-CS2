@@ -25,7 +25,7 @@ constexpr const CVector& CVector::operator*(const float factor) const noexcept
 
 bool CVector::IsZero()
 {
-    if (x == 0 || y == 0 || z == 0)
+    if (x == 0 && y == 0 && z == 0)
         return true;
     return false;
 }

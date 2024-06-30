@@ -75,10 +75,10 @@ void aim::DoAim()
 		// Verdammt ghetto aber egal
 		CVector headPos = { playerPosition.x, playerPosition.y, playerPosition.z += 66.0f };
 
-		if (CVector pos = math::W2S(viewMatrix, headPos); !pos.IsZero())
-			playerPositions.push_back(pos);
+		CVector pos = math::W2S(viewMatrix, headPos);
+		playerPositions.push_back(pos);
 	}
 
-	if (GetAsyncKeyState(VK_XBUTTON2)) // Seten Maus Taste kann personalisiert werden. 
+	if (GetAsyncKeyState(VK_XBUTTON2)) // Seiten Maus Taste kann personalisiert werden. 
 		MoveToPos(ClosestPlayer(playerPositions));
 }
